@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-elevator {
+  display: flex;
+  flex-direction: column;
+}
+
+.elevator-button {
+  padding: 10px 15px;
+  border-radius: 100%;
+  margin-left: 10px;
+}
+
+.elevator-button-pressed {
+  border-color: red;
+}
+
+.body-elevator {
+  background-color: #0f172a;
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  padding: 80px;
+  margin: 20px 0;
+  border-radius: 30px;
+}
+
+.arrow-going{
+  fill: black !important;
+}
