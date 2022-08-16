@@ -13,10 +13,39 @@ body {
   flex-direction: column;
 }
 
+.elevator{
+  display: flex;
+  flex-direction: column-reverse;
+
+}
+
+.elevator-floor{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.elevator-buttons{
+  position: absolute;
+  right: 0;
+  top: 8px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  gap: 5px;
+  width: 30%;
+}
+
 .elevator-button {
-  padding: 10px 15px;
+  padding: 2px 4px;
+  font-size: 0.55rem;
+  font-weight:bolder;
   border-radius: 100%;
   margin-left: 10px;
+  align-self: center;
+  background-color: #312e81;
+  color: white;
+  cursor: pointer;
 }
 
 .elevator-button-pressed {
@@ -24,15 +53,39 @@ body {
 }
 
 .body-elevator {
-  background-color: #0f172a;
+  position: relative;
+  background-color: #1e293b;
   color: white;
   font-size: 3rem;
   text-align: center;
-  padding: 80px;
-  margin: 20px 0;
-  border-radius: 30px;
+  width: 150px;
+  height: 150px;
+  margin: 10px 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
 }
 
-.arrow-going{
-  fill: black !important;
+.elevator-number{
+  margin: 0;
+  align-self: center;
 }
+
+.button-elevator-outside{
+ padding: 0;
+ background-color: transparent;
+ border: none;
+ cursor: pointer;
+}
+
+.arrow-button{
+  width: 30px;
+  height: 30px;
+}
+
+.arrow-buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
