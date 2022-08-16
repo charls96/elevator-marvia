@@ -25,17 +25,23 @@ const Elevator = () => {
     ]);
   };
 
-  const elevatorOutsideButtonDataToElevator = (elevatorOutsideButtonDataValue: number, direction: string) => {
+  const [buttonDirection, setButtonDirection] = useState<string | null>();
+
+  const elevatorOutsideButtonDataToElevator = (
+    elevatorOutsideButtonDataValue: number,
+    direction: string
+  ) => {
     setSelectedFloors((selectedFloors) => [
       ...selectedFloors,
       elevatorOutsideButtonDataValue,
     ]);
+    setButtonDirection(direction);
   };
 
   useEffect(() => {
     const delay = setTimeout(() => {
       setSelectedFloorsAfter(selectedFloors);
-    }, 1500);
+    }, 2000);
     return () => clearTimeout(delay);
   }, [selectedFloors]);
 
@@ -43,8 +49,10 @@ const Elevator = () => {
     if (selectedFloors.length !== 0) {
       selectedFloors
         .sort((a, b): number => {
-          if (currentFloorNumber > a) {
+          if (currentFloorNumber > a || buttonDirection === "down") {
             return a - b;
+          } else if(currentFloorNumber < a || buttonDirection === "up") {
+            return b - a;
           }
           return b - a;
         })
@@ -57,12 +65,16 @@ const Elevator = () => {
               setSelectedFloors(
                 selectedFloors.filter((removeFloor) => removeFloor !== floor)
               );
-            }, 1500);
+            }, 2000);
             return () => clearTimeout(delay);
           } else {
             setCurrentFloor("You are already at floor " + floor);
           }
         });
+    }
+
+    if (selectedFloors.length === 0) {
+      setButtonDirection(null);
     }
   }, [selectedFloorsAfter]);
 
@@ -79,7 +91,9 @@ const Elevator = () => {
                 numberFloors={numberFloors}
                 numberElevator={i}
                 currentFloorNumber={currentFloorNumber}
-                elevatorOutsideButtonDataToElevator={elevatorOutsideButtonDataToElevator}
+                elevatorOutsideButtonDataToElevator={
+                  elevatorOutsideButtonDataToElevator
+                }
               />
               <ElevatorBody
                 numberElevator={i}

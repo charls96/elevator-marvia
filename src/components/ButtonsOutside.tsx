@@ -27,7 +27,6 @@ const ButtonsOutside = ({
           const elevatorOutsideButtonValue: number = parseInt(
             (e.currentTarget as HTMLInputElement).value
           );
-          console.log(elevatorOutsideButtonValue);
           elevatorOutsideButtonDataToElevator?.(elevatorOutsideButtonValue, "up");
         }}
       >
