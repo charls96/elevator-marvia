@@ -92,6 +92,7 @@ const Elevator = () => {
         <h1 className="title">The Elevator by Carlos Daniel</h1>
         <p>Visit the repository in <a href="https://github.com/charls96/elevator-marvia" target="_blank">Github</a></p>
         <h3>Built with Vite + React + Typescript</h3>
+        <p className="info">Info: There is a 2s delay of time before the elevator starts moving because of letting time to press different buttons</p>
         <h3>There are {numberFloors} floors</h3>
         <NumberOfFloors NumberOfFloorsData={NumberOfFloorsData} />
         <p>{currentFloor}</p>

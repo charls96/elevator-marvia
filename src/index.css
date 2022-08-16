@@ -34,6 +34,15 @@ body {
   font-weight: bold;
 }
 
+.info{
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  color: #e5e7eb;
+  background-color:cornflowerblue;
+  font-weight: bold;
+}
+
 .form-elevator {
   display: flex;
   flex-direction: column;
