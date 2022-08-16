@@ -8,44 +8,80 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.app-elevator {
+  display: flex;
+  gap: 50px;
+}
+
+@media (max-width: 768px) {
+  .app-elevator {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+.header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  background: linear-gradient(to right, rgb(67, 61, 255), rgb(27, 120, 183));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-weight: bold;
+}
+
 .form-elevator {
   display: flex;
   flex-direction: column;
 }
 
-.elevator{
+.elevator {
   display: flex;
   flex-direction: column-reverse;
-
 }
 
-.elevator-floor{
+.elevator-floor {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-.elevator-buttons{
+.elevator-buttons {
   position: absolute;
   right: 0;
   top: 8px;
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
-  gap: 5px;
+  gap: 1px;
   width: 30%;
 }
 
 .elevator-button {
-  padding: 2px 4px;
-  font-size: 0.55rem;
-  font-weight:bolder;
+  padding: 1px 3px;
+  font-size: 0.4rem;
+  font-weight: bolder;
   border-radius: 100%;
   margin-left: 10px;
   align-self: center;
   background-color: #312e81;
   color: white;
   cursor: pointer;
+}
+
+@media (min-width: 2000px) {
+  .elevator-button {
+    padding: 2px 4px;
+    font-size: 0.55rem;
+  }
+
+  .elevator-buttons{
+    gap: 5px;
+  }
 }
 
 .elevator-button-pressed {
@@ -58,34 +94,40 @@ body {
   color: white;
   font-size: 3rem;
   text-align: center;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   margin: 10px 0;
   border-radius: 10px;
   display: flex;
   justify-content: center;
 }
 
-.elevator-number{
+@media (min-width: 2000px) {
+  .body-elevator {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.elevator-number {
   margin: 0;
   align-self: center;
 }
 
-.button-elevator-outside{
- padding: 0;
- background-color: transparent;
- border: none;
- cursor: pointer;
+.button-elevator-outside {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.arrow-button{
+.arrow-button {
   width: 30px;
   height: 30px;
 }
 
-.arrow-buttons{
+.arrow-buttons {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-

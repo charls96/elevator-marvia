@@ -49,9 +49,17 @@ const Elevator = () => {
     if (selectedFloors.length !== 0) {
       selectedFloors
         .sort((a, b): number => {
-          if (currentFloorNumber > a || buttonDirection === "down") {
+          if (
+            (currentFloorNumber > a && buttonDirection === "down") ||
+            buttonDirection === "down" ||
+            (currentFloorNumber > a && buttonDirection == null)
+          ) {
             return a - b;
-          } else if(currentFloorNumber < a || buttonDirection === "up") {
+          } else if (
+            (currentFloorNumber < a && buttonDirection === "up") ||
+            buttonDirection === "up" ||
+            (currentFloorNumber < a && buttonDirection == null)
+          ) {
             return b - a;
           }
           return b - a;
@@ -79,10 +87,15 @@ const Elevator = () => {
   }, [selectedFloorsAfter]);
 
   return (
-    <div>
-      <h2>There are {numberFloors} floors</h2>
-      <NumberOfFloors NumberOfFloorsData={NumberOfFloorsData} />
-      <p>{currentFloor}</p>
+    <div className="app-elevator">
+      <div className="header">
+        <h1 className="title">The Elevator by Carlos Daniel</h1>
+        <p>Visit the repository in <a href="https://github.com/charls96/elevator-marvia" target="_blank">Github</a></p>
+        <h3>Built with Vite + React + Typescript</h3>
+        <h3>There are {numberFloors} floors</h3>
+        <NumberOfFloors NumberOfFloorsData={NumberOfFloorsData} />
+        <p>{currentFloor}</p>
+      </div>
       <div className="elevator">
         {arrNumberFloors?.map((i) => {
           return (
